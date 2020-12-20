@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import fire from "../../firebase";
-import ReactDOM from 'react-dom';
-export default function GetM(value, onComplete) {
 
+
+export default function PostM() {
+    //dane testowe jakie wysyłamy
     let state = {
         data : {
             id: 'test',
             file: 'jan pawel 2',
-            itemName: 'gmd3',
+            itemName: 'gmd',
             width: 2137,
             length: 13,
             realHeight: 6.9,
@@ -17,16 +18,14 @@ export default function GetM(value, onComplete) {
     }
 
     function postM(obj) {
-        alert("kutaz");
         let name = obj.itemName.toString().valueOf();
         console.log(name);
-        fire.database().ref('Podwysocki').child(name).push(obj);
+        fire.database().ref('database').child(name).set(obj);
     }
 
     return(
         <div id="post">
             <button id="post"
-                    value={state.data}
                     onClick={
                         () => postM(state.data)
                     }

@@ -17,9 +17,8 @@ export default function DeleteM() {
     }
 
     function DeleteM(obj) {
-        alert("cipaaa");
         let name = obj.itemName.toString().valueOf();
-        const ref = fire.database().ref(`Podwysocki/${name}`);
+        const ref = fire.database().ref(`database/${name}`);
         ref.remove();
 
     }
@@ -27,7 +26,6 @@ export default function DeleteM() {
     return (
         <div id="del">
             <button id="del"
-                    value={state.data}
                     onClick={
                         () => DeleteM(state.data)
                     }

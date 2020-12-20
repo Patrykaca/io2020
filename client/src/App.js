@@ -2,8 +2,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 import './App.css';
 import FirstConnect from './components/FirstConnect/FirstConnect';
-import FirebaseText from './components/firebase/FirebaseText';
-//import fire from "./firebase";
+import Firebase from "./components/firebase/Firebase";
 
 function App() {
 
@@ -12,7 +11,7 @@ function App() {
         <BrowserRouter>
 
             <div className="App">
-                <FirebaseText/>
+                <Firebase/>
                 <FirstConnect/>
             </div>
         </BrowserRouter>
