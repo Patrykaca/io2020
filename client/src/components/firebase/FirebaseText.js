@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import fire from "../../firebase";
 import GetM from "./GetM";
 import PostM from "./PostM";
+import DeleteM from "./DeleteM";
 
 class FirebaseText extends Component {
-
 
     state = {
         text: "",
@@ -20,11 +20,6 @@ class FirebaseText extends Component {
             itemType: 'yes',
         },
     }
-
-
-
-
-
 
     handleText = e => {
         this.setState({
@@ -99,6 +94,7 @@ class FirebaseText extends Component {
 
                 <GetM/>
                 <PostM/>
+                <DeleteM/>
             </div>
 
 

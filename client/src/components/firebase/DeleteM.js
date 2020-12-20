@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import fire from "../../firebase";
-import ReactDOM from 'react-dom';
-export default function GetM(value, onComplete) {
+
+export default function DeleteM() {
 
     let state = {
-        data : {
+        data: {
             id: 'test',
             file: 'jan pawel 2',
-            itemName: 'gmd3',
+            itemName: 'gmd2',
             width: 2137,
             length: 13,
             realHeight: 6.9,
@@ -16,21 +16,22 @@ export default function GetM(value, onComplete) {
         },
     }
 
-    function postM(obj) {
-        alert("kutaz");
+    function DeleteM(obj) {
+        alert("cipaaa");
         let name = obj.itemName.toString().valueOf();
-        console.log(name);
-        fire.database().ref('Podwysocki').child(name).push(obj);
+        const ref = fire.database().ref(`Podwysocki/${name}`);
+        ref.remove();
+
     }
 
-    return(
-        <div id="post">
-            <button id="post"
+    return (
+        <div id="del">
+            <button id="del"
                     value={state.data}
                     onClick={
-                        () => postM(state.data)
+                        () => DeleteM(state.data)
                     }
-            >PostM
+            >DelM
             </button>
 
         </div>
