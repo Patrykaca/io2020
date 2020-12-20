@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import fire from "../../firebase";
 import GetM from "./GetM";
+import PostM from "./PostM";
 
 class FirebaseText extends Component {
 
@@ -97,6 +98,7 @@ class FirebaseText extends Component {
                 </button>
 
                 <GetM/>
+                <PostM/>
             </div>
 
 

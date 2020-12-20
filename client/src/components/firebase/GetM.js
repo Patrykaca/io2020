@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import fire from "../../firebase";
-import ReactDOM from 'react-dom';
 export default function GetM() {
     let tab = [];
 
-    function getM() {
-        alert("sdafdgfg");
+    function getAllM() {
         fire.database().ref("Podwysocki")
             .on("value", snapshot => {
                 let arr = [];
@@ -15,13 +13,25 @@ export default function GetM() {
                 tab = arr;
             });
         console.log(tab);
-        ReactDOM.render(<GetM/>, document.getElementById('tabela'));
+      //  ReactDOM.render(<GetM/>, document.getElementById('tabela'));
+    }
+
+    function getByName() {
+        fire.database().ref("Podwysocki")
+            .on("value", snapshot => {
+                let arr = [];
+                snapshot.forEach(snap => {
+                    arr.push(snap.val());
+                });
+                tab = arr;
+            });
+        console.log(tab);
     }
 
     return(
         <div id="tabela">
             <button id="trze"
-                    onClick={getM}
+                    onClick={getAllM}
             >GetM
             </button>
 
