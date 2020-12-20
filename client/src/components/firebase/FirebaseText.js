@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import fire from "../../firebase";
+import GetM from "./GetM";
 
 class FirebaseText extends Component {
+
+
     state = {
         text: "",
         dane : [],
@@ -54,18 +57,18 @@ class FirebaseText extends Component {
   //  }
 
 
-    getM = e => {
-        alert("sdafdgfg");
-        fire.database().ref("Podwysocki")
-            .on("value", snapshot => {
-                let arr = [];
-                snapshot.forEach(snap => {
-                    arr.push(snap.val());
-                });
-                this.state.dane = arr;
-            });
-
-    }
+  //  getM = e => {
+  //      alert("sdafdgfg");
+  //      fire.database().ref("Podwysocki")
+  //          .on("value", snapshot => {
+  //              let arr = [];
+  //              snapshot.forEach(snap => {
+  //                  arr.push(snap.val());
+  //              });
+  //              this.state.dane = arr;
+  //          });
+//
+  //  }
 
     del() {
         console.log(this.state.dane);
@@ -86,43 +89,14 @@ class FirebaseText extends Component {
                     />
                 </div>
                     <button id="drugi"
-                        onClick={this.getM()}
                     >get
                     </button>
                 <button id="trze"
                         onClick={this.del()}
                 >del
                 </button>
-                <div>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>file</th>
-                            <th>itemName</th>
-                            <th>width</th>
-                            <th>realHeight</th>
-                            <th>price</th>
-                            <th>itemType</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {this.state.dane.map(zmienna => {
-                            return (
-                                <tr>
-                                    <td>{zmienna.id}</td>
-                                    <td>{zmienna.file}</td>
-                                    <td>{zmienna.itemName}</td>
-                                    <td>{zmienna.width}</td>
-                                    <td>{zmienna.realHeight}</td>
-                                    <td>{zmienna.price}</td>
-                                    <td>{zmienna.itemType}</td>
-                                </tr>
-                            )
-                        })}
-                        </tbody>
-                    </table>
-                </div>
+
+                <GetM/>
             </div>
 
 

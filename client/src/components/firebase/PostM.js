@@ -38,15 +38,15 @@ export default function GetM() {
                 </tr>
                 </thead>
                 <tbody>
-                        <tr>
-                            <td>{tab.id}</td>
-                            <td>{tab.file}</td>
-                            <td>{tab.itemName}</td>
-                            <td>{tab.width}</td>
-                            <td>{tab.realHeight}</td>
-                            <td>{tab.price}</td>
-                            <td>{tab.itemType}</td>
-                        </tr>
+                <tr>
+                    <td>{tab.id}</td>
+                    <td>{tab.file}</td>
+                    <td>{tab.itemName}</td>
+                    <td>{tab.width}</td>
+                    <td>{tab.realHeight}</td>
+                    <td>{tab.price}</td>
+                    <td>{tab.itemType}</td>
+                </tr>
                 </tbody>
             </table>
         </div>
